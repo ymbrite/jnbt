@@ -58,7 +58,7 @@ FSD는 일반적으로 큰 규모의 프로젝트에서 사용되지만, 이 템
 
 ## 🛠️ 기술 스택
 
-- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Framework**: [Next.js 16](https://nextjs.org/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
 - **Content**: MDX ([@next/mdx](https://nextjs.org/docs/app/building-your-application/configuring/mdx))
@@ -75,7 +75,7 @@ FSD는 일반적으로 큰 규모의 프로젝트에서 사용되지만, 이 템
 
 시작하기 전에 다음 요구 사항을 충족하는지 확인하세요.
 
-- Node.js 20.x 이상
+- Node.js 20.9 이상
 - pnpm 9.x 이상
 
 ### 설치
