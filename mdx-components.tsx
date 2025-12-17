@@ -1,5 +1,4 @@
 import type { MDXComponents } from 'mdx/types';
-import Image from 'next/image';
 
 const components: MDXComponents = {
   h2: ({ children, ...props }) => (
@@ -75,11 +74,10 @@ const components: MDXComponents = {
     </pre>
   ),
   img: (props) => (
-    <Image
-      width={0}
-      height={0}
-      sizes="100vw"
-      className="h-auto w-full rounded-[0.5rem] shadow-[var(--shadow)]"
+    <img
+      src={props.src}
+      alt={props.alt}
+      className="mx-auto mt-8 mb-0 rounded-[0.5rem] shadow-[var(--shadow)]"
       {...props}
     />
   ),
