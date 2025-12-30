@@ -3,7 +3,7 @@ import type { MDXComponents } from 'mdx/types';
 const components: MDXComponents = {
   h2: ({ children, ...props }) => (
     <h2
-      className="mb-[1.5em] scroll-mt-[-2.1em] border-t pt-[2.1em] font-bold text-[2em] leading-[1.5] tracking-[-0.025em]"
+      className="mt-[2.1em] mb-[1.5em] font-bold text-[2em] leading-[1.5] tracking-[-0.025em] lg:text-[2.2em] xl:text-[2.3em]"
       {...props}
     >
       {children}
@@ -11,7 +11,7 @@ const components: MDXComponents = {
   ),
   h3: ({ children, ...props }) => (
     <h3
-      className="mt-[2em] mb-[1.5rem] font-bold text-[1.8em] leading-[1.5] tracking-[-0.025em]"
+      className="mt-[2em] mb-[1.5rem] font-bold text-[1.8em] leading-[1.5] tracking-[-0.025em] lg:text-[1.9em] xl:text-[2em]"
       {...props}
     >
       {children}
@@ -19,7 +19,7 @@ const components: MDXComponents = {
   ),
   p: ({ children, ...props }) => (
     <p
-      className="mb-[2rem] font-nanum-square-round leading-[1.9] sm:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.15rem] [&_code]:mx-[0.2rem] [&_code]:break-words [&_code]:rounded-[0.4rem] [&_code]:bg-[#e83e8c1a] [&_code]:px-[0.3rem] [&_code]:py-[0.2rem] [&_code]:text-[#e83e8c] [&_code]:text-[0.9em] dark:[&_code]:bg-[#3e3e3e] dark:[&_code]:text-[#ff8926]"
+      className="mb-[2rem] font-nanum-square-round text-[#24292e] leading-[1.9] sm:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.15rem] dark:text-foreground [&_code]:mx-[0.2rem] [&_code]:break-words [&_code]:rounded-[0.4rem] [&_code]:bg-[#e9ecef] [&_code]:px-[0.3rem] [&_code]:py-[0.2rem] [&_code]:text-[0.9em] dark:[&_code]:bg-[#30323a]"
       {...props}
     >
       {children}
@@ -27,7 +27,7 @@ const components: MDXComponents = {
   ),
   blockquote: ({ children, ...props }) => (
     <blockquote
-      className="mt-[1.5rem] mb-[2rem] rounded-[0.5rem] border-l-[0.5rem] bg-[#F4F4F4] p-[1rem] dark:bg-[#1c1c1f] [&>p]:mt-[2rem]"
+      className="mt-[1.5rem] mb-[2rem] border-l-[0.4rem] bg-[#f1f3f5] p-[1rem] dark:bg-[#1a1b1d] [&>p]:mt-[2rem]"
       {...props}
     >
       {children}
@@ -45,34 +45,41 @@ const components: MDXComponents = {
   ),
   li: ({ children, ...props }) => (
     <li
-      className="font-nanum-square-round sm:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.15rem] [&>p]:mt-[0.25rem] [&>p]:mb-[0.5rem]"
+      className="font-nanum-square-round marker:text-sm sm:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.15rem] [&>p]:mt-[0.25rem] [&>p]:mb-[0.5rem]"
       {...props}
     >
       {children}
     </li>
   ),
   em: ({ children, ...props }) => (
-    <em className="block p-[10px] text-center text-[0.9rem] leading-[1.9]" {...props}>
+    <em
+      className="block p-[10px] text-center text-[0.9rem] text-tertiary-foreground not-italic leading-[1.9]"
+      {...props}
+    >
       {children}
     </em>
   ),
   a: ({ children, ...props }) => (
     <a
       target="_blank"
-      className="underline decoration-dashed underline-offset-[0.45em] hover:text-accent-foreground"
+      className="underline decoration-wavy underline-offset-[0.4em] hover:text-accent-foreground"
       {...props}
     >
       {children}
     </a>
   ),
-  pre: ({ children, ...props }) => (
-    <pre
-      className="!bg-[#2d2d2d] mb-[2rem] overflow-auto rounded-[0.5rem] py-[1em] leading-[1.9] shadow-[var(--shadow)] sm:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.15rem] [&_[data-highlighted-line]]:border-accent-foreground [&_[data-highlighted-line]]:border-l-4 [&_[data-highlighted-line]]:bg-[rgba(55,148,255,0.1)] [&_code>span]:px-[1em]"
-      {...props}
-    >
-      {children}
-    </pre>
-  ),
+  pre: ({ children, ...props }) => {
+    return (
+      <div className="mb-[2rem]">
+        <pre
+          className="!bg-[#252526] overflow-auto rounded-b-[0.5rem] py-[1em] leading-[1.9] sm:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.15rem] [&_[data-highlighted-line]]:bg-[#2d2d2d] [&_code>span]:px-[1em]"
+          {...props}
+        >
+          {children}
+        </pre>
+      </div>
+    );
+  },
   img: (props) => (
     <img
       src={props.src}
